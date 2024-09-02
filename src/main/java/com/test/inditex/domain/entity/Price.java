@@ -1,17 +1,14 @@
-package com.test.inditex.entity;
+package com.test.inditex.domain.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import lombok.Setter;
-
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "PRICE")
-@Setter
 @Getter
 public class Price {
 

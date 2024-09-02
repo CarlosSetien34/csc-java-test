@@ -1,11 +1,11 @@
-package com.test.inditex.service.impl;
+package com.test.inditex.application.service.usecase;
 
-import com.test.inditex.dto.PriceDto;
-import com.test.inditex.entity.Price;
-import com.test.inditex.exception.InvalidInputException;
-import com.test.inditex.exception.NotFoundException;
-import com.test.inditex.repository.PriceRepository;
-import com.test.inditex.service.PriceService;
+import com.test.inditex.infrastructure.outbound.response.PriceDto;
+import com.test.inditex.domain.entity.Price;
+import com.test.inditex.infrastructure.inbound.exception.InvalidInputException;
+import com.test.inditex.infrastructure.inbound.exception.NotFoundException;
+import com.test.inditex.domain.repository.PriceRepository;
+import com.test.inditex.application.service.PriceServiceAdapter;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +18,9 @@ import java.util.Comparator;
 import java.util.List;
 
 @Service
-public class PriceServiceImpl implements PriceService {
+public class GetPriceUseCase implements PriceServiceAdapter {
 
-    private static final Logger log = LoggerFactory.getLogger(PriceServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(GetPriceUseCase.class);
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm");
 
     @Autowired
@@ -33,7 +33,7 @@ public class PriceServiceImpl implements PriceService {
 
         validateInputData(priceDateStr, productId, brandId);
         LocalDateTime priceDate = LocalDateTime.parse(priceDateStr, DATE_TIME_FORMATTER);
-        List<com.test.inditex.entity.Price> prices = priceRepository.findByParams(priceDate, productId, brandId);
+        List<Price> prices = priceRepository.findByParams(priceDate, productId, brandId);
 
         if (prices.isEmpty()) {
             throw new NotFoundException();

@@ -1,7 +1,7 @@
-package com.test.inditex.controller.handler;
+package com.test.inditex.infrastructure.inbound.controller.handler;
 
-import com.test.inditex.exception.InvalidInputException;
-import com.test.inditex.exception.NotFoundException;
+import com.test.inditex.infrastructure.inbound.exception.InvalidInputException;
+import com.test.inditex.infrastructure.inbound.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

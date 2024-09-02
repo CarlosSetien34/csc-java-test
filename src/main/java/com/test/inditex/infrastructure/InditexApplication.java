@@ -1,4 +1,4 @@
-package com.test.inditex;
+package com.test.inditex.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

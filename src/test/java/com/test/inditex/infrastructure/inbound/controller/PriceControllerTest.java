@@ -1,4 +1,4 @@
-package com.test.inditex.controller;
+package com.test.inditex.infrastructure.inbound.controller;
 
 
 import org.hamcrest.core.Is;

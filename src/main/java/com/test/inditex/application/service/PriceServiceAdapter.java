@@ -1,13 +1,13 @@
-package com.test.inditex.service;
+package com.test.inditex.application.service;
 
-import com.test.inditex.dto.PriceDto;
-import com.test.inditex.exception.InvalidInputException;
-import com.test.inditex.exception.NotFoundException;
+import com.test.inditex.infrastructure.outbound.response.PriceDto;
+import com.test.inditex.infrastructure.inbound.exception.InvalidInputException;
+import com.test.inditex.infrastructure.inbound.exception.NotFoundException;
 
 /**
  * Price service
  */
-public interface PriceService {
+public interface PriceServiceAdapter {
 
     /**
      * Find price (pvp) by:

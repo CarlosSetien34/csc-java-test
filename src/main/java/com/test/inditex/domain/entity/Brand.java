@@ -1,4 +1,4 @@
-package com.test.inditex.entity;
+package com.test.inditex.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

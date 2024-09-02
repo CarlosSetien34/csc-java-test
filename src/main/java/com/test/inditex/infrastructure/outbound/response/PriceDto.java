@@ -1,8 +1,8 @@
-package com.test.inditex.dto;
+package com.test.inditex.infrastructure.outbound.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.test.inditex.entity.Brand;
+import com.test.inditex.domain.entity.Brand;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * A DTO for the {@link com.test.inditex.entity.Price} entity
+ * A DTO for the {@link com.test.inditex.domain.entity.Price} entity
  */
 @Data
 @AllArgsConstructor

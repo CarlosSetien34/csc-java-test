@@ -1,9 +1,9 @@
-package com.test.inditex.controller;
+package com.test.inditex.infrastructure.inbound.controller;
 
-import com.test.inditex.dto.PriceDto;
-import com.test.inditex.exception.InvalidInputException;
-import com.test.inditex.exception.NotFoundException;
-import com.test.inditex.service.PriceService;
+import com.test.inditex.infrastructure.outbound.response.PriceDto;
+import com.test.inditex.infrastructure.inbound.exception.InvalidInputException;
+import com.test.inditex.infrastructure.inbound.exception.NotFoundException;
+import com.test.inditex.application.service.PriceServiceAdapter;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PriceController {
 
     @Autowired
-    private PriceService priceService;
+    private PriceServiceAdapter priceServiceAdapter;
 
     @Operation(summary = "Find price", description = "Find a pvp single price", tags = {"price"})
     @ApiResponses(value = {
@@ -38,7 +38,7 @@ public class PriceController {
                                                  @Parameter(in = ParameterIn.PATH, description = "Product id to find", required = true, example = "35455", schema = @Schema()) @PathVariable("productid") Long productid,
                                                  @Parameter(in = ParameterIn.PATH, description = "Brand id to find", required = true, example = "1", schema = @Schema()) @PathVariable("brandid") Long brandid) throws InvalidInputException, NotFoundException {
 
-        PriceDto pvpPrice = priceService.findPricePvp(pricedate, productid, brandid);
+        PriceDto pvpPrice = priceServiceAdapter.findPricePvp(pricedate, productid, brandid);
         return new ResponseEntity<>(pvpPrice, HttpStatus.OK);
     }
 }

@@ -1,4 +1,4 @@
-package com.test.inditex.exception;
+package com.test.inditex.infrastructure.inbound.exception;
 
 public class InvalidInputException extends Exception{
     public InvalidInputException() {
