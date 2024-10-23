@@ -28,7 +28,7 @@ public class AppConfig {
                         .title("Store pricing API")
                         .version(appVersion)
                         .description(appDesciption)
-                        .contact(new Contact().name("Carlos Setien").email("lucas.walkowicz@gmail.com"))
+                        .contact(new Contact().name("Carlos Setien").email("carlossetien34@gmail.com"))
                 );
     }
 
